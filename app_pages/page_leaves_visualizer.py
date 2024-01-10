@@ -10,7 +10,7 @@ import itertools
 import random
 
 
-def page_cells_visualizer_body():
+def page_leaves_visualizer_body():
     st.write("### Leaves Visualizer")
     st.info(
         f"* The client is interested in having a study that visually "
