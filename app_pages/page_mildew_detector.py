@@ -5,10 +5,10 @@ import pandas as pd
 
 from src.data_management import download_dataframe_as_csv
 from src.machine_learning.predictive_analysis import (
-    load_model_and_predict,
-    resize_input_image,
-    plot_predictions_probabilities
-)
+                                                    load_model_and_predict,
+                                                    resize_input_image,
+                                                    plot_predictions_probabilities
+                                                    )
 
 
 def page_mildew_detector_body():
