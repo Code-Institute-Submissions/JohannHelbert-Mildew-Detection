@@ -2,11 +2,15 @@
 
 <img src="assets/images/Mildew Detection Background.png">
 
-This website's machine learning technology offers a platform for users to upload photos of cherry leaves and detect whether or not they are healthy or infected with powdery mildew.
+
 
 [Live View](https://mildew-detection01-7248fb9a8199.herokuapp.com/)
 
-# Planning Phase
+Mildew Detector is an app that can predict whether a cherry leaf is healthy or is infected with powdery mildew. The app is capable of predicting on new image data of a given cherry leaf is healthy or infected.
+
+The project aim is to create a Predictive Analytics Machine Learning Tool that can rapidly and accurately determine whteher an uploaded image of a cherry leaf is a healthy leaf, or one infected with the Powdery Mildew Disease, which is harmful to plants. The prupose of this is to aid the client in limiting their losses as a busienss that relies heavily on cherry leaves as a product for revenue.
+
+The app has been designed using an ML model based on a supervised learning and single-label binary classification. A binary classifer output is used to predict the outcome of data uploaded to the app.
 
 ## Business Requirements
 
@@ -17,6 +21,7 @@ To save time in this process, the IT team suggested an ML system that is capable
 ### **Project Goal:**
 
 * 1 - The client is interested in conducting a study to visually differentiate a cherry leaf that is healthy and that contains powdery mildew.
+
 * 2 - The client is interested to predict if a cherry leaf is healthy or contains powdery mildew.
 
 ## Dataset Content
@@ -26,22 +31,24 @@ To save time in this process, the IT team suggested an ML system that is capable
 
 
 
-## Hypothesis and how to validate?
+## Hypothesis and Validation
 
-* The tree leaves that have pwdery mildew contains white streaks on them.
-  * conventional data analysis will be used to conduct a study to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew.
+* Infected leaves have clear marks differentiating them from the healthy leaves.We suspect cherry leaves affected by powdery mildew have clear marks, typically the first symptom is a light-green, circular lesion on either leaf surface, then a subtle white cotton-like growth develops in the infected area.
 
-## Rationale to map the business requirements to the Data Visualizations and ML tasks
+## Rationale to map the business requirements to the Data Visualisations and ML tasks
 
-* **Business Requirement 1**: Data Visualization
-    In order to  visually differentiate healthy and mildew-infested cherry leaves:
-  * As a client I want to  display the "mean" and "standard deviation" images for cherry leaves that are healthy and cherry leaves that contain powdery mildew.
- 	* As a client I want to display the differences between an average healthy cherry leaf and a cherry leaf that has powdery mildew.
-  * As a client I want to display an image montage for healthy cherry leaf and mildew-infested leaf.
+### Business Requirement 1: Data Visualisation
+  
+- The client wants to display the mean and variability of healthy cherry leaf images and cherry leaves that contain powdery mildew infection, so that they can visually differentiate between the two.
+- The client wants to visually display the difference between an average healthy cherry leaf, and an average powdery mildew infected cherry leaf. This allows detection of distinguishable variations between the two. 
+- The client would like an image montage to be available for healthy leaf images, and infected leaf images. This is to allow for a visual differentiation between the two image labels, and to recognise appearance patterns across images of the same label. 
 
-* **Business Requirement 2**:  Classification
-  * As a client I want to predict if a given cherry leaf is healthy or contains powdery mildew so that I do not supply the market with a product of compromised quality.
-  * As a client I want to build a binary classifier and generate reports.
+### Business Requirement 2: Classification of Images
+
+- The client requires a tool that accurately predicts whether a given cherry leaf is healthy or infected with powdery mildew disease.
+- The client needs a data processing and prediction tool that can be assimilated across the company. This will eliminate need for manual detection of the infection which requires employee time and increased personnel resources.
+- The company will save time and labour resources, as well as capital spent on these, by increasing the volume of product they can export and provide to the market. This will in turn increase their revenue and therefore provide the company with greater funds to invest in its own productivity and actvitiy.  
+- The client wants an ML model with a binary classification output, and to have the ability to generate and download a report of the results.
 
 ## ML Business Case
 
@@ -50,54 +57,29 @@ To save time in this process, the IT team suggested an ML system that is capable
 * The model success metric are:
   * A study showing how to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew.
   * The capability to predict if a cherry leaf is healthy or contains powdery mildew.
-  * The model accuracy on test data is 97%
+  
 
 ---
 
-## Data Understanding
-
-The data is labelled image data split into two folders, each representing the image label. For example, so healthy labelled leaves images are in the healthy directory, while the mildew leaves are in the powder_mildew directory.
-
-The classification dataset included 4208 records (2104 healthy leaves and 2104 infected leaves) was a balanced dataset.
-
-## Data Preparation
-
-Minimal data cleaning was required, the folders were scanned through to delete any non-image file. To adequately perform model training and avoid model overfitting the dataset was split into train, test and validation set. The split ratio of the dataset was 0.7, 0.2, and 0.1 repspectively.
-Data augmentation was performed using ImageDataGenerator on the training dataset to increase the image data by artificially and temporarily creating training images through the combination of different processes, such as random rotation, shifts, sheared, zoom and rotated images in the computer's short-term memory (RAM). ImageDataGenertor was also used to rescale the test dataset and validation dataset.
-
-## Modeling
-
-The sequential model is used on the training dataset was used to train the model and validated using the validation dataset.
-
-The model created was used to make prediction on the unseen test dataset and the Accuracy performance metrics calculated.
-
-## Evaluation
-
-The model accuracy on the test datset is over 97% which is the required percentage accuracy. To test further I uploaded two leaves(healthy and mildew leaves shown under sample data above) which were not part of the dataset were uploaded and the were adequately predicted.
-
-[Mildew Leaf](docs/images/page_3_detector_2.png)
-
-[Healthy Leaf](docs/images/page_3_detector_3.png)
 
 ---
 
-## Dashboard Design (Streamlit App User Interface)
+## Dashboard Design
 
-### Dashboard Wireframe
 
-Dashboard wireframe was created using balsamiq. The wireframe is in pdf format and can be viewed [here](docs/project_wireframe.pdf)
 
 ### Page 1: Quick Project Summary
 
-* A project summary page, showing the project dataset summary and the client's requirements.
-* Quick project summary
-  * General Information
   * Project Dataset
-    * The dataset contains +4 thousand images taken from client's crop fields. The images show cherry leaves that are healthy and cherry leaves that contain powdery mildew, which is a fungal disease that affects a wide range of plants. The cherry plantation crop is one of their finest products in the portfolio and the company is concerned about supplying the market with a product of compromised quality.
+
+    * The available dataset contains 2104 healthy leaves and 2104 affected leaves individually photographed against a neutral background.
 
   * Business requirements
-    * The client is interested in conducting a study to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew.
-    * The client is interested in predicting if a cherry tree is healthy or contains powdery mildew.
+    * A study to visually differentiate a healthy from an infected leaf.
+    * An accurate prediction whether a given leaf is infected by powdery mildew or not.
+    * Download a prediction report of the examined leaves.
+    <hr>
+    <img src="assets/images/Project Summary.png">
 
 ### Page 2: Cherry leaf visualizer
 
@@ -107,6 +89,11 @@ Dashboard wireframe was created using balsamiq. The wireframe is in pdf format a
   * Checkbox 2 - Differences between Healthy and Powdery Mildew Cherry Leaves
   * Checkbox 3 - Image Montage
 
+  <hr>
+
+  <img src="assets/images/Leaves Visualiser Page.png">
+  
+
 ### Page 3: Mildew detector
 
 * It will answer business requirement 2
@@ -115,14 +102,24 @@ Dashboard wireframe was created using balsamiq. The wireframe is in pdf format a
   * Display image and prediction statement indicating whether or not a cherry leaf conatins mildew
   * Display table with image name and prediction result
   * Download button to download table
+  <hr>
+  <img src="assets/images/Powdery Mildew detector.png">
+  <img src="assets/images/Powdery Mildew detector 2.png">
+  <img src="assets/images/Powdery Mildew detector 3.png">
+  <img src="assets/images/Powdery Mildew detector 4.png">
 
 ### Page 4: Project Hypothesis and Validation
 
-* Display each project hypothesis and validation
+* Infected leaves have clear marks differentiating them from the healthy leaves.We suspect cherry leaves affected by powdery mildew have clear marks, typically the first symptom is a light-green, circular lesion on either leaf surface, then a subtle white cotton-like growth develops in the infected area.
+<hr>
+<img src="assets/images/Project Hypothesis.png">
 
 ### Page 5: ML performance metrics
 
 * A technical page displaying the model performance
+<hr>
+<img src="assets/images/ML Performance Metrics 1.png">
+<img src="assets/images/ML Performance Metrics 2.png">
 
 ## **Features**
 
