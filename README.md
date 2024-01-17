@@ -121,46 +121,14 @@ To save time in this process, the IT team suggested an ML system that is capable
 <img src="assets/images/ML Performance Metrics 1.png">
 <img src="assets/images/ML Performance Metrics 2.png">
 
-## **Features**
-
-The application is designed using streamlit library. It is has a sidebar menu with five navigation links.
-
-**Navigation** The dashboard developed is a multipage streamlit application with sidebar navigation checkbox links. The navigation links provides quick access to the five pages listed:
-
-* **Page 1: Quick Project Summary**
-This page displays a brief overview of the project requirements and the dataset
-![](docs/images/page_1_summary.png)
-
-* **Page 2: Cherry leaf visualizer**
-This page displays a brief overview of the project requirements and the dataset
-![](docs/images/page_2_visualizer_difference.png)
-
-![](docs/images/page_2_visualizer_diff.png)
-
-* **Page 3: Mildew Detector**
-This provides the interface for the user to upload test samples and predict wether or not the samples provided are healthy or infested with powdery leaf mildew. It features a *Browse file* button which user can use to upload one or more image files. Prediction is not made until the user clicks on the *Make Prediction* button. The image uploaded as well as the prediction and report is displayed to the user when the prediction is complete
-
-![](docs/images/page_3_detector.png)
-
- ![](docs/images/page_3_detector_2.png)
-
-* **Page 4: Hypothesis and Visualization**
-This page shows the project hypothesis and how it is validated across the project.
-![](docs/images/page_4_hypothesis.png)
-  
-* **Page 5: ML Performance Metric**
-Technical information about the model and data are displayed on this page. It shows the:
-  * label frequencies of the train, validation and test datasets
-  * training model accuracy and loss charts
-  * generalised performance on the test sets
-  
-![](docs/images/page_5_metrics.png)
 
 ---
 
 ## Bugs and Fixes
 
-* After deploying my project to Heroku, the Image Montage was not displaying since the directory holding the images had been excluded from the GitHub push due to privacy issues, indicating that the data can only be shared with professionals who are formally participating in the project.
+* After deploying my project to Heroku, the Image Montage was not displaying since the directory holding the images had the wrong path.
+so i type the right path and after its displaying the Image Montage
+
 
 ## Deployment
 
@@ -180,13 +148,13 @@ The repository for this project was created off the [template](https://github.co
 
 Cloning your repository will enable you to work on a local version of the repository.
 
-1. Locate the [project repository](https://github.com/valerieoni/mildew-detection)
+1. Locate the [project repository](https://github.com/JohannHelbert/Mildew-Detection)
 2. Press the arrow on the Code button
-3. To clone the repository using HTTPS, copy the [link](https://github.com/valerieoni/mildew-detection.git) that is shown in the drop-down
+3. To clone the repository using HTTPS, copy the [link](https://github.com/JohannHelbert/Mildew-Detection) that is shown in the drop-down
 4. Open Git Bash
 5. Change the current working directory to the location where you want the cloned created
 6. In the terminal type `git clone` and then paste the link you copied in step 3
-	`git clone https://github.com/valerieoni/mildew-detection.git`
+	`git clone https://github.com/JohannHelbert/Mildew-Detection`
 7. Press enter and your local clone will be created.
 
 ### Creating Heroku App
@@ -208,12 +176,17 @@ Steps take to create the app is as follows:
 
 ### Deploying to Heroku
 
-1. Sign in to Heroku
-2. Select app
-3. At the Deploy tab, select GitHub as the deployment method.
-4. Select your repository name and click Search. Once it is found, click Connect.
-5. Select the branch you want to deploy, then click Deploy Branch.
-6. The deployment process should happen smoothly in case all deployment files are fully functional. Click now the button Open App on the top of the page to access your App.
+* The App live link is: https://YOUR_APP_NAME.herokuapp.com/ 
+* Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
+* The project was deployed to Heroku using the following steps.
+
+1. Log in to Heroku and create an App
+2. At the Deploy tab, select GitHub as the deployment method.
+3. Select your repository name and click Search. Once it is found, click Connect.
+4. Select the branch you want to deploy, then click Deploy Branch.
+5. The deployment process should happen smoothly if all deployment files are fully functional. Click now the button Open App on the top of the page to access your App.
+6. If the slug size is too large then add large files not required for the app to the .slugignore file. 
+
 
 ## Technologies Used
 
@@ -235,24 +208,25 @@ Steps take to create the app is as follows:
 
 * [Git](https://git-scm.com/) - used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 * [GitHub:](https://github.com/) - used to store the projects code after being pushed from Git.
-* [Balsamiq:](https://balsamiq.com/) - Balsamiq was used to create the Dashboard [wireframes](docs/project_wireframe.pdf) during the design process.
+Dashboard [wireframes](docs/project_wireframe.pdf) during the design process.
 * [Heroku](https://www.heroku.com/) - Deployment platform for the project
 * [GitPod](https://www.gitpod.io/) - Workspace used for the project
+* [Codeanywhere](https://app.codeanywhere.com/) - Workspace used for the project
 * [AmIResponsive](http://ami.responsivedesign.is/) - Used to generate responsive image used in README file.
 
 ## Credits
 
-I used several internet sources to resolve issues and solve difficulties when constructing this website, as well as modules to add functionality.
+
 
 ### Content
 
-* The codes used to implement the functionalities in the project are from the Code Institute training by GyanShashwat1611 at [Github site](https://github.com/GyanShashwat1611/WalkthroughProject01/)
+* The codes used to implement the functionalities in the project are from the Code Institute Walkthrough Project 01 (Data Analysis & Machine Learning Toolkit)
 * Dataset is from [Kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves)
+* https://github.com/georgiagrayland/mildew-detection-cherry-leaves-p5 was used as guidace for the readme
+* https://github.com/cla-cif/Cherry-Powdery-Mildew-Detector?tab=readme-ov-file#bugs was used as guidace for the readme
 
 ### Media
 
-* The images used in the readme and as sample download files on the dashboard are sourced from [pixabay](https://pixabay.com/) and [iStock](https://www.istockphoto.com/)
+* The images used in the readme are from my App Mildew Detection
 
-## Acknowledgements
 
-* I would like to thank my mentor, Marcel Mulders for his support, guidance and feedbacks throughout the course of the project.
